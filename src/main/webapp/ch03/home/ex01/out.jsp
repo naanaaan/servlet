@@ -8,3 +8,4 @@
 %>
 <!-- 과제: /ch03/ex01/out.jsp 를 refactoring 하라.
 		out객체를 쓰지마라. -->
+	
