@@ -1,0 +1,18 @@
+<%@ page language='java' contentType='text/html; charset=utf-8' pageEncoding='utf-8'%>
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
+<%
+   String userId = request.getParameter("userId");
+   String isStoreId = request.getParameter("isStoreId");
+   
+   if(!userId.equals("")) {
+      session.setAttribute("userId", userId);
+      
+      //ID 저장 선택한 경우.
+      if(isStoreId != null && isStoreId.equals("true")) {
+         Cookie cookie = new Cookie("userId", userId);
+         cookie.setMaxAge(10);
+         response.addCookie(cookie);
+      }
+   }
+%>
+<c:redirect url='main.jsp'/>

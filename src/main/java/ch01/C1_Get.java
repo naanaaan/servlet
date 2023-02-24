@@ -29,4 +29,4 @@ public class C1_Get extends HttpServlet { //request 보내는 최종 목적지�
 	}
 }
 // http://localhost(내컴퓨터 주소, 127.0.0.1)  :80(tomcat의 주소)   /servlet(webapp의 주소, '/' = context pass)  /servlet/ch01.C1_Get
-// context pass를 포함하고 있으면 절대주소, 아니면 상대주소.
+// context pass를 포함하고 있으면 대주소, 아니면 상대주소.
