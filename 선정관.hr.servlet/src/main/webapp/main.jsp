@@ -8,7 +8,7 @@
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'></script>
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
-    let laborers = [] //database 준비.
+   	let laborers = [] //database 준비.
     let laborerId = function* genLaborerId() {
         let laborerId = 1
         while(true) yield laborerId++
@@ -117,7 +117,7 @@
         })
     }
 
-    $(init)
+   
 </script>
 <title>hr.jquery</title>
 <style>
@@ -133,12 +133,13 @@
         </header>
     </div>
 </div>
+
 <div class='row'>
     <div class='col'>
-        <form>
+        <form action='controller.jsp' method='post'>
             <div class='row mt-5'>
                 <div class='col-2'>
-                    <input type='text' class='form-control' placeholder='노동자명' id='laborerName'/>
+                    <input type='text' class='form-control' placeholder='노동자명' name='laborerName' id='laborerName'/>
                 </div>
                 <div class='col-5'>
                     <div class='row'>
@@ -147,20 +148,20 @@
                         </div>
                         <div class='col'>
                             <input type='date' class='form-control' id='hireDate'
-                                placeholder='입사일' required/>
+                                name='hireDate' placeholder='입사일' required/>
                         </div>
                     </div>
                 </div>
                 <div class='gap-2 col d-flex justify-content-end'>
-                    <div type='button' class='btn btn-primary' id='addLaborerBtn'>
+                    <button type='submit' name='addLaborerBtn' value='on' class='btn btn-primary' id='addLaborerBtn'>
                         <i class='bi bi-plus-circle'></i>
                         <span class='d-none d-md-inline'>추가</span>
-                    </div>
-                    <div type='button' class='btn btn-success' id='fixLaborerBtn'>
+                    </button>
+                    <button type='submit' name='fixLaborerBtn' value='on' class='btn btn-success' id='fixLaborerBtn'>
                         <i class='bi bi-check-circle'></i>
                         <span class='d-none d-md-inline'>수정</span>
-                    </div>
-                    <div type='button' class='btn btn-danger' id='delLaborerBtn'>
+                    </button>
+                    <div type='button'  class='btn btn-danger' id='delLaborerBtn'>
                         <i class='bi bi-x-circle'></i>
                         <span class='d-none d-md-inline'>삭제</span>
                     </div>
@@ -197,8 +198,8 @@
                 <p id='modalMsg'></p>
             </div>
             <div class='modal-footer' id='modalBtn'>
-                <div type='button' class='btn btn-secondary' data-bs-dismiss='modal'>아니오</div>
-                <div type='button' class='btn btn-primary' id='delLaborerOkBtn'>예</div>
+                <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>아니오</button>
+                <button type='button' class='btn btn-primary' id='delLaborerOkBtn'>예</button>
             </div>
         </div>
     </div>
